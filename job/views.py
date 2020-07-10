@@ -5,7 +5,9 @@ from .models import job
 
 def job_list(request):
     job_list = job.objects.all()
-    context = {'jobs' : job_list}
+    max = job.objects.all().order_by("-id")[0]
+    context = {'jobs' : job_list ,
+                'max' : max}
     return render(request,'job/job_list.html',context)
 
 def job_details(request , id):
