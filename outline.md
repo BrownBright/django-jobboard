@@ -29,3 +29,17 @@ Blog:
 --search
 --comment
 --recent posts
+
+
+
+
+
+relations :
+    - one to many  [author - posts]
+    - many to many [users  - groups]
+    - one to one   [user   - profile]
+
+
+
+static files : [front end]
+meida files  : [uploaded files]

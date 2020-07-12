@@ -8,7 +8,7 @@ import datetime
 # Create your views here.
 
 def job_list(request):
-    job_list = job.objects.all()
+    job_list = job.objects.get_queryset().order_by('id')
     max = job.objects.all().order_by("-id")[0]
     paginator = Paginator(job_list, 4) # Show 25 contacts per page.
     page_number = request.GET.get('page')
