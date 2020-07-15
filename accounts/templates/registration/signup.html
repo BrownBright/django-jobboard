@@ -1,16 +1,14 @@
 {% extends "base.html" %}
-
 {% load bootstrap4 %}
-
 {% block body %}
 
-    <!-- bradcam_area  -->
-    <div class="bradcam_area bradcam_bg_1">
+     <!-- bradcam_area  -->
+     <div class="bradcam_area bradcam_bg_1">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h3>Change Password</h3>
+                        <h3>Login</h3>
                     </div>
                 </div>
             </div>
@@ -22,14 +20,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-10 mx-auto">
-                    <div class="apply_job_form white-bg">
+                    <div class="apply_job_form white-bg mx-auto">
                        
-                        <form action="" method="post">
-                            {% csrf_token %}
-                               {% bootstrap_form form %}
-                              <input type="submit" class="boxed-btn3 w-100" value="Change password">
-                            </form>
-
+                      <form class="form" method="post">
+                        {% csrf_token %}
+                        {% bootstrap_form form %}
+                        <input class="boxed-btn3 w-15 align-self-xl-auto" type="submit" value="Sign up" />
+                        
+                      </form>
+                      
+ 
                         
                     </div>
                 </div>
@@ -38,8 +38,5 @@
         </div>
     </div>
 
-
-{% endblock body %}
-
-
-
+  
+{% endblock %}

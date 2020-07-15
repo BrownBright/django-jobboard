@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path , include
 from job import urls
+from accounts import urls
 from django.conf import settings
 from django.conf.urls.static import static 
 
@@ -23,10 +24,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('accounts.urls'),name='accounts'),
     path('jobs/', include('job.urls',namespace='jobs')),
-    path('admin/', admin.site.urls),
-    
-    
+    path('admin/', admin.site.urls), 
 ]
 
 
