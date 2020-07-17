@@ -2,6 +2,7 @@ from django.shortcuts import render ,redirect
 from django.urls import reverse
 from .models import job
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
 from .forms import ApplyForm , post_job
 import datetime
 
@@ -18,7 +19,7 @@ def job_list(request):
     return render(request,'job/job_list.html',context)
 
 
-
+@login_required
 def job_details(request , slug):
     job_detail = job.objects.get(slug=slug)
 
@@ -35,7 +36,7 @@ def job_details(request , slug):
     return render(request,'job/job_details.html',context)
 
 
-
+@login_required
 def add_job(request):
     if request.method =='POST':
         formpost = post_job(request.POST , request.FILES)

@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path , include
 from job import urls
 from accounts import urls
+from contact import urls
 from django.conf import settings
 from django.conf.urls.static import static 
 
@@ -27,6 +28,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls'),name='accounts'),
     path('jobs/', include('job.urls',namespace='jobs')),
     path('admin/', admin.site.urls), 
+    path('contactus/', include('contact.urls',namespace='contactus')),
 ]
 
 
